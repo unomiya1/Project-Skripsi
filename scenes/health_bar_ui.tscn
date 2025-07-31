@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7pep4hq1kt5g"]
+
+[ext_resource type="Script" uid="uid://c4lqywj0ug163" path="res://scenes/health_bar_Enemy.gd" id="1_d55an"]
+[ext_resource type="FontFile" uid="uid://bx80rdp7dgbpm" path="res://assets/fibberish.ttf" id="2_5vuoi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mu1xg"]
+bg_color = Color(0, 0, 0, 0.490196)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4ka2"]
+bg_color = Color(1, 0, 0.0166664, 1)
+
+[node name="HealthBarUI" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d55an")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -4.0
+offset_right = 62.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5vuoi")
+theme_override_styles/background = SubResource("StyleBoxFlat_mu1xg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f4ka2")
+step = 0.001
+value = 100.0
+show_percentage = false
